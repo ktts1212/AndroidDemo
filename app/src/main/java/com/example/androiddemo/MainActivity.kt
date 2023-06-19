@@ -4,25 +4,19 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.databinding.ActivityMainBinding
 import com.example.androiddemo.fragments.HomeFragment
-import com.example.androiddemo.fragments.MessageFragment
 import com.example.androiddemo.fragments.MyFragment
 import com.example.androiddemo.fragments.PubFragment
-import com.example.androiddemo.fragments.ShopFragment
 
 
 class MainActivity : AppCompatActivity() {
     private val homeFragment by lazy {
         HomeFragment()
     }
-    private val shopFragment by lazy {
-        ShopFragment()
-    }
+
     private val pubFragment by lazy {
         PubFragment()
     }
-    private val messageFragment by lazy {
-       MessageFragment()
-    }
+
     private val myFragment by lazy {
         MyFragment()
     }
@@ -43,18 +37,8 @@ class MainActivity : AppCompatActivity() {
                         transcation.commit()
                         return@setOnItemSelectedListener true
                     }
-                    R.id.shop->{
-                        transcation.replace(R.id.fragment_container,shopFragment)
-                        transcation.commit()
-                        return@setOnItemSelectedListener true
-                    }
                     R.id.publish->{
                         transcation.replace(R.id.fragment_container,pubFragment)
-                        transcation.commit()
-                        return@setOnItemSelectedListener true
-                    }
-                    R.id.message->{
-                        transcation.replace(R.id.fragment_container,messageFragment)
                         transcation.commit()
                         return@setOnItemSelectedListener true
                     }
